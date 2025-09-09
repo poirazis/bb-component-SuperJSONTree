@@ -1,6 +1,6 @@
 {
   "name": "bb-component-SuperJSONTree",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A JSON Object tree viewer for Budibase",
   "license": "MIT",
   "svelte": "index.js",
