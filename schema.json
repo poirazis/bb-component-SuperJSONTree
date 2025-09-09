@@ -1,0 +1,34 @@
+{
+  "type": "component",
+  "metadata": {},
+  "schema": {
+    "name": "bb-component-SuperJSONTree",
+    "friendlyName": "Super JSON Tree",
+    "description": "A JSON Object tree viewer for Budibase",
+    "icon": "Brackets",
+    "styles": ["size", "padding", "border", "background"],
+
+    "settings": [
+      {
+        "type": "text",
+        "key": "value",
+        "label": "Value"
+      },
+      {
+        "type": "boolean",
+        "key": "showKeyCount",
+        "label": "Show Key Count"
+      },
+      {
+        "type": "boolean",
+        "key": "quiet",
+        "label": "Quiet"
+      },
+      {
+        "type": "boolean",
+        "key": "monospace",
+        "label": "Monospace"
+      }
+    ]
+  }
+}
