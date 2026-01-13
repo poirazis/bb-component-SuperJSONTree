@@ -1,5 +1,4 @@
 <script>
-  import { slide } from "svelte/transition";
   import { writable } from "svelte/store";
 
   export let value = {};
@@ -10,14 +9,18 @@
   const expandedNodes = writable([]);
 
   function toggleNode(key) {
-    expandedNodes.update((nodes) => {
-      const index = nodes.indexOf(key);
-      if (index === -1) {
-        return [...nodes, key];
-      } else {
-        return nodes.filter((node) => node !== key);
-      }
-    });
+    try {
+      expandedNodes.update((nodes) => {
+        const index = nodes.indexOf(key);
+        if (index === -1) {
+          return [...nodes, key];
+        } else {
+          return nodes.filter((node) => node !== key);
+        }
+      });
+    } catch (e) {
+      console.error("Error toggling node:", e);
+    }
   }
 
   function hasChildren(value) {
@@ -141,7 +144,7 @@
           </div>
 
           {#if node.hasChildNodes && $expandedNodes.includes(node.fullPath)}
-            <ul class="list nested" transition:slide={{ duration: 200 }}>
+            <ul class="list nested">
               {#if node.isArray}
                 {#each node.value as item, index}
                   {@const childNode = renderNode(
@@ -242,6 +245,7 @@
     padding-left: 0;
     padding-right: 0.5rem;
     margin: 0;
+    transition: all 0.2s ease-in-out;
   }
 
   .list-item {
