@@ -10,8 +10,6 @@
   export let quiet = false;
   export let monospace = false;
 
-  $: parsedData = safeParse(value ?? {});
-
   const safeParse = (value) => {
     try {
       const result = typeof value === "string" ? JSON.parse(value) : value;
@@ -20,7 +18,7 @@
       return value;
     }
   };
-
+  $: parsedData = safeParse(value ?? {});
   $: $component.styles = {
     ...$component.styles,
     normal: {
