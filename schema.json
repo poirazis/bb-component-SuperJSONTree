@@ -19,7 +19,7 @@
       {
         "type": "boolean",
         "key": "showKeyCount",
-        "label": "Show Key Count"
+        "label": "Key Count"
       },
       {
         "type": "boolean",

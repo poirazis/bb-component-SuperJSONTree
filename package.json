@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "bb-component-SuperJSONTree",
-  "version": "1.1.1",
+  "version": "1.2.1",
   "description": "A JSON Object tree viewer for Budibase",
   "packageManager": "bun@1.0.0",
   "license": "MIT",

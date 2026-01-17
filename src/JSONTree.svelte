@@ -1,5 +1,6 @@
 <script>
   import { writable } from "svelte/store";
+  import { slide } from "svelte/transition";
 
   export let value = {};
   export let showKeyCount = false;
@@ -144,7 +145,7 @@
           </div>
 
           {#if node.hasChildNodes && $expandedNodes.includes(node.fullPath)}
-            <ul class="list nested">
+            <ul class="list nested" transition:slide>
               {#if node.isArray}
                 {#each node.value as item, index}
                   {@const childNode = renderNode(
@@ -185,7 +186,7 @@
                       {/if}
                     </div>
                     {#if childNode.hasChildNodes && $expandedNodes.includes(childNode.fullPath)}
-                      <ul class="list nested">
+                      <ul class="list nested" transition:slide>
                         <li class="list-item nested-item">
                           <svelte:self
                             value={childNode.value}
